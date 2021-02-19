@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<NotepadPlus>
+	<AutoComplete language="SPF">		
+		<Environment ignoreCase="yes" startFunc="(" stopFunc=")" paramSeparator="," additionalWordChar="" />		
+		<KeyWord name="Abs" func="yes">
+			<Overload retVal="Number" descr="Returns the absolute value of a number. The absolute value of a number is the number without its sign.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Acos" func="yes">
+			<Overload retVal="Number" descr="Returns the arccosine, or inverse cosine, of a number. The arccosine is the angle whose cosine is number. The returned angle is given in radians in the range 0 (zero) to pi.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="AcosH" func="yes">
+			<Overload retVal="Number" descr="Returns the inverse hyperbolic cosine of a number. Number must be greater than or equal to 1. The inverse hyperbolic cosine is the value whose hyperbolic cosine is number, so ACOSH(COSH(number)) equals number.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="AND" func="yes">
+			<Overload retVal="Boolean" descr="Returns the logical value TRUE if all of the arguments are TRUE; returns FALSE if one or more arguments is FALSE.">
+				<Param name="Logical Value1"/>
+				<Param name="Logical Value2"/>
+				<Param name="[Logical Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Asin" func="yes">
+			<Overload retVal="Number" descr="Returns the arcsine, or inverse sine, of a number. The arcsine is the angle whose sine is number. The returned angle is given in radians in the range -pi/2 to pi/2.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="AsinH" func="yes">
+			<Overload retVal="Number" descr="Returns the inverse hyperbolic sine of a number. The inverse hyperbolic sine is the value whose hyperbolic sine is number, so ASINH(SINH(number)) equals number.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Atan" func="yes">
+			<Overload retVal="Number" descr="Returns the arctangent, or inverse tangent, of a number. The arctangent is the angle whose tangent is number. The returned angle is given in radians in the range -pi/2 to pi/2.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Atan2" func="yes">
+			<Overload retVal="Number" descr="Returns the arctangent, or inverse tangent, of the specified x- and y-coordinates. The arctangent is the angle from the x-axis to a line containing the origin (0, 0) and a point with coordinates (x_num, y_num). The angle is given in radians between -pi and pi, excluding -pi.">
+				<Param name="Number xNum"/>
+				<Param name="Number yNum"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Average" func="yes">
+			<Overload retVal="Number" descr="Returns the average (arithmetic mean) of the arguments.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>				
+			</Overload>
+		</KeyWord>
+		<KeyWord name="AverageA" func="yes">
+			<Overload retVal="Number" descr="Calculates the average (arithmetic mean) of the values in the list of arguments. Unlike the AVERAGE functions, text and logical values such as TRUE and FALSE are included in the calculation.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>				
+			</Overload>
+		</KeyWord>
+		<KeyWord name="BetaDist" func="yes">
+			<Overload retVal="Number" descr="Returns the cumulative beta probability distribution function. The cumulative beta probability distribution function is commonly used to study variation in the percentage of something across samples, such as the fraction of the day people spend watching television.">
+				<Param name="Number X"/>
+				<Param name="Number Alpha"/>
+				<Param name="Number Beta"/>
+				<Param name="Number A"/>
+				<Param name="Number B"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="BetaInv" func="yes">
+			<Overload retVal="Number" descr="Returns the inverse of the cumulative beta probability distribution function. That is, if probability = BETADIST(x,...), then BETAINV(probability,...) = x. The cumulative beta distribution can be used in project planning to model probable completion times given an expected completion time and variability.">
+				<Param name="Number Probability"/>
+				<Param name="Number Alpha"/>
+				<Param name="Number Beta"/>
+				<Param name="Number A"/>
+				<Param name="Number B"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="BinomDist" func="yes">
+			<Overload retVal="Number" descr="Returns the individual term binomial distribution probability. \\r\\n  Use BINOMDIST in problems with a fixed number of tests or trials, when the outcomes of any trial are only success or failure, when trials are independent, and when the probability of success is constant throughout the experiment. For example, BINOMDIST can calculate the probability that two of the next three babies born are male.">
+				<Param name="Number Successes"/>
+				<Param name="Number Trials"/>
+				<Param name="Number SuccessProbability"/>
+				<Param name="Boolean Cumulative"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Ceiling" func="yes">
+			<Overload retVal="Number" descr="Returns number rounded up, away from zero, to the nearest multiple of significance. For example, if you want to avoid using pennies in your prices and your product is priced at $4.42, use the formula =CEILING(4.42,0.05) to round prices up to the nearest nickel.">
+				<Param name="Number Value"/>
+				<Param name="Number Significance"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Char" func="yes">
+			<Overload retVal="String" descr="Returns the character specified by a number. Use CHAR to translate code page numbers you might get from files on other types of computers into characters.">
+				<Param name="Integer Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ChiDist" func="yes">
+			<Overload retVal="Number" descr="Returns the one-tailed probability of the chi-squared distribution. The ?2 distribution is associated with a ?2 test. Use the ?2 test to compare observed and expected values. For example, a genetic experiment might hypothesize that the next generation of plants will exhibit a certain set of colors. By comparing the observed results with the expected ones, you can decide whether your original hypothesis is valid.">
+				<Param name="Number Value"/>
+				<Param name="Number Degrees"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Choose" func="yes">
+			<Overload retVal="Object" descr="Uses index_num to return a value from the list of value arguments. Use CHOOSE to select one of up to 29 values based on the index number. For example, if value1 through value7 are the days of the week, CHOOSE returns one of the days when a number between 1 and 7 is used as index_num.">
+				<Param name="Integer Index"/>
+				<Param name="Object Item1"/>
+				<Param name="Object Item2"/>
+				<Param name="[Object Item3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Code" func="yes">
+			<Overload retVal="Integer" descr="Returns a numeric code for the first character in a text string. The returned code corresponds to the character set used by your computer.">
+				<Param name="Char Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Concatenate" func="yes">
+			<Overload retVal="String" descr="Joins several text strings into one text string.">
+				<Param name="String Value1"/>
+				<Param name="String Value2"/>
+				<Param name="[String Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Confidence" func="yes">
+			<Overload retVal="Number" descr="Returns the confidence interval for a population mean with a normal distribution. The confidence interval is a range on either side of a sample mean. For example, if you order a product through the mail, you can determine, with a particular level of confidence, the earliest and latest the product will arrive.">
+				<Param name="Number Alpha"/>
+				<Param name="Number StdDeviation"/>
+				<Param name="Number SampleSize"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Cos" func="yes">
+			<Overload retVal="Number" descr="Returns the cosine of the given angle.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Count" func="yes">
+			<Overload retVal="Integer" descr="Counts the number of arguments that contain numbers.">
+				<Param name="Object Value1"/>
+				<Param name="Object Value2"/>
+				<Param name="[Object Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CountA" func="yes">
+			<Overload retVal="Integer" descr="Counts the number of arguments that are not empty.">
+				<Param name="Object Value1"/>
+				<Param name="Object Value2"/>
+				<Param name="[Object Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="CritBinom" func="yes">
+			<Overload retVal="Number" descr="Returns the smallest value for which the cumulative binomial distribution is greater than or equal to a criterion value. Use this function for quality assurance applications. For example, use CRITBINOM to determine the greatest number of defective parts that are allowed to come off an assembly line run without rejecting the entire lot.">
+				<Param name="Number Trials"/>
+				<Param name="Number Probability"/>
+				<Param name="Number Alpha"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Date" func="yes">
+			<Overload retVal="Integer" descr="Returns the sequential serial number that represents a particular date.">
+				<Param name="Integer Year"/>
+				<Param name="Integer Month"/>
+				<Param name="Integer Day"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DatedIf" func="yes">
+			<Overload retVal="Integer" descr="Calculates the number of days, months, or years between two dates. Warning: Excel provides the DATEDIF function in order to support older workbooks from Lotus 1-2-3. The DATEDIF function may calculate incorrect results under certain scenarios. Please see the known issues section of this article for further details.">
+				<Param name="StringOrInteger StartDate"/>
+				<Param name="StringOrInteger EndDate"/>
+				<Param name="String Unit:Y-M-D-MD-YM-YD"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="DateValue" func="yes">
+			<Overload retVal="Integer" descr="Returns the serial number of the date represented by date_text. Use DATEVALUE to convert a date represented by text to a serial number.">
+				<Param name="String DateText"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Day" func="yes">
+			<Overload retVal="Integer" descr="Returns the day of a date, represented by a serial number. The day is given as an integer ranging from 1 to 31.">
+				<Param name="Integer DateInteger"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Days360" func="yes">
+			<Overload retVal="Integer" descr="Returns the number of days between two dates based on a 360-day year (twelve 30-day months), which is used in some accounting calculations. Use this function to help compute payments if your accounting system is based on twelve 30-day months.">
+				<Param name="DateInteger StartDate"/>
+				<Param name="DateInteger EndDate"/>
+				<Param name="Boolean Method:UsFalse=Eu-True"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Ddb" func="yes">
+			<Overload retVal="Number" descr="Returns the depreciation of an asset for a specified period using the double-declining balance method or some other method you specify.">
+				<Param name="Number InitialCost"/>
+				<Param name="Number Salvage"/>
+				<Param name="Number Life-Periods"/>
+				<Param name="Number Target-Period"/>
+				<Param name="[Number DeclineFactor]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Degrees" func="yes">
+			<Overload retVal="Number" descr="Converts radians into degrees.">
+				<Param name="Number Angle"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Dollar" func="yes">
+			<Overload retVal="String" descr="Converts a number to text using currency format, with the decimals rounded to the specified place. The format used is $#,##0.00_);($#,##0.00).">
+				<Param name="Number Value"/>
+				<Param name="Integer DecimalPlaces"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Even" func="yes">
+			<Overload retVal="Integer" descr="Returns number rounded up to the nearest even integer. You can use this function for processing items that come in twos. For example, a packing crate accepts rows of one or two items. The crate is full when the number of items, rounded up to the nearest two, matches the crate's capacity.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Exact" func="yes">
+			<Overload retVal="Boolean" descr="Compares two text strings and returns the logical value TRUE if they are exactly the same, FALSE otherwise. EXACT is case-sensitive. Use EXACT to test text being entered into a document.">
+				<Param name="String Value1"/>
+				<Param name="String Value2"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="ExponDist" func="yes">
+			<Overload retVal="Number" descr="Returns the exponential distribution. Use EXPONDIST to model the time between events, such as how long an automated bank teller takes to deliver cash. For example, you can use EXPONDIST to determine the probability that the process takes at most 1 minute.">
+				<Param name="Number Value"/>
+				<Param name="Number LambdaParam"/>
+				<Param name="Boolean Cumulative"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Fact" func="yes">
+			<Overload retVal="Integer" descr="Returns the factorial of a number. The factorial of a number is equal to 1*2*3*...* number.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="FALSE" func="no">
+			<Overload retVal="Boolean" descr="Returns the logical value FALSE." />
+		</KeyWord>
+		<KeyWord name="FDist" func="yes">
+			<Overload retVal="Number" descr="Returns the F probability distribution. You can use this function to determine whether two data sets have different degrees of diversity. For example, you can examine test scores given to men and women entering high school and determine if the variability in the females is different from that found in the males.">
+				<Param name="Number Value"/>
+				<Param name="Number Degrees"/>
+				<Param name="Number DenominatorDeg"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Find" func="yes">
+			<Overload retVal="Integer" descr="Finds one text string (find_text) within another text string (within_text), and returns the number of the starting position of find_text, from the first character of within_text. You can also use SEARCH to find one text string within another, but unlike SEARCH, FIND is case sensitive and doesn't allow wildcard characters.">
+				<Param name="String TextValue"/>
+				<Param name="String Target"/>
+				<Param name="[Integer StartingIndex]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="FInv" func="yes">
+			<Overload retVal="Number" descr="Returns the inverse of the F probability distribution. If p = FDIST(x,...), then FINV(p,...) = x. The F distribution can be used in an F-test that compares the degree of variability in two data sets. For example, you can analyze income distributions in the United States and Canada to determine whether the two countries have a similar degree of diversity.">
+				<Param name="Number Probability"/>
+				<Param name="Number Degrees"/>
+				<Param name="Number DenominatorDeg"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Fisher" func="yes">
+			<Overload retVal="Number" descr="Returns the Fisher transformation at x. This transformation produces a function that is approximately normally distributed rather than skewed. Use this function to perform hypothesis testing on the correlation coefficient.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Fixed" func="yes">
+			<Overload retVal="Number" descr="Rounds a number to the specified number of decimals, formats the number in decimal format using a period and commas, and returns the result as text.">
+				<Param name="Number Value"/>
+				<Param name="Number DecimalPlaces"/>
+				<Param name="Boolean NoCommas"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GammaDist" func="yes">
+			<Overload retVal="Number" descr="Returns the gamma distribution. You can use this function to study variables that may have a skewed distribution. The gamma distribution is commonly used in queuing analysis.">
+				<Param name="Number Value"/>
+				<Param name="Number Alpha"/>
+				<Param name="Number Beta"/>
+				<Param name="Boolean Cumulative"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GammaInv" func="yes">
+			<Overload retVal="Number" descr="Returns the inverse of the gamma cumulative distribution. If p = GAMMADIST(x,...), then GAMMAINV(p,...) = x. You can use this function to study a variable whose distribution may be skewed.">
+				<Param name="Number Probability"/>
+				<Param name="Number Alpha"/>
+				<Param name="Number Beta"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GammaLn" func="yes">
+			<Overload retVal="Number" descr="Returns the natural logarithm of the gamma function, G(x).">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="GeoMean" func="yes">
+			<Overload retVal="Number" descr="Returns the geometric mean of positive data. For example, you can use GEOMEAN to calculate average growth rate given compound interest with variable rates.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="HarMean" func="yes">
+			<Overload retVal="Number" descr="Returns the harmonic mean of a data set. The harmonic mean is the reciprocal of the arithmetic mean of reciprocals.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Hour" func="yes">
+			<Overload retVal="Integer" descr="Returns the hour of a time value. The hour is given as an integer, ranging from 0 (12:00 A.M.) to 23 (11:00 P.M.).">
+				<Param name="DateInteger Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="HypGeomDist" func="yes">
+			<Overload retVal="Number" descr="Returns the hypergeometric distribution. HYPGEOMDIST returns the probability of a given number of sample successes, given the sample size, population successes, and population size. Use HYPGEOMDIST for problems with a finite population, where each observation is either a success or a failure, and where each subset of a given size is chosen with equal likelihood.">
+				<Param name="Number Successes"/>
+				<Param name="Number SampleSize"/>
+				<Param name="Number Population"/>
+				<Param name="Number PopulationSize"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="If" func="yes">
+			<Overload retVal="Object" descr="Returns one value if a condition you specify evaluates to TRUE and another value if it evaluates to FALSE. Use IF to conduct conditional tests on values and formulas.">
+				<Param name="Logical Test"/>
+				<Param name="Object TrueReturnValue"/>
+				<Param name="[Object FalseReturnValue]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Int" func="yes">
+			<Overload retVal="Integer" descr="Rounds a number down to the nearest integer.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IPmt" func="yes">
+			<Overload retVal="Number" descr="Returns the interest payment for a given period for an investment based on periodic, constant payments and a constant interest rate. For a more complete description of the arguments in IPMT and for more information about annuity functions, see the PV function.">
+				<Param name="Number Rate"/>
+				<Param name="Number TargetPeriod"/>
+				<Param name="Number TotalPeriods"/>
+				<Param name="Number PresentValue"/>
+				<Param name="[Number FutureValue]"/>
+				<Param name="[Number Type:1-0]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsBlank" func="yes">
+			<Overload retVal="Boolean" descr="Returns True if the value refers to an empty column reference.">
+				<Param name="Object Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsErr" func="yes">
+			<Overload retVal="Boolean" descr="Returns True if the value refers to any error value except #N/A.">
+				<Param name="Object Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsError" func="yes">
+			<Overload retVal="Boolean" descr="Returns True if the value refers to any error value (#N/A, #VALUE!, #REF!, #DIV/0!, #NUM!, #NAME?, or #NULL!).">
+				<Param name="Object Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsLogical" func="yes">
+			<Overload retVal="Boolean" descr="Returns True if the value refers to a logical value.">
+				<Param name="Object Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsNA" func="yes">
+			<Overload retVal="Boolean" descr="Returns True if the value refers to the #N/A (value not available) error value.">
+				<Param name="Object Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsNonText" func="yes">
+			<Overload retVal="Boolean" descr="Returns True if the value refers to any item that is not text. (Note that this function returns TRUE if value refers to a blank column reference.)">
+				<Param name="Object Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsNumber" func="yes">
+			<Overload retVal="Boolean" descr="Returns True if the value refers to number.">
+				<Param name="Object Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="IsText" func="yes">
+			<Overload retVal="Boolean" descr="Returns True if the value refers to text.">
+				<Param name="Object Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Left" func="yes">
+			<Overload retVal="String" descr="LEFT returns the first character or characters in a text string, based on the number of characters you specify.">
+				<Param name="String TextValue"/>
+				<Param name="[Integer Length]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Len" func="yes">
+			<Overload retVal="Integer" descr="LEN returns the number of characters in a text string.">
+				<Param name="String TextValue"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="LN" func="yes">
+			<Overload retVal="Number" descr="Returns the natural logarithm of a number. Natural logarithms are based on the constant e (2.71828182845904).">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Log" func="yes">
+			<Overload retVal="Number" descr="Returns the logarithm of a number to the base you specify.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Log10" func="yes">
+			<Overload retVal="Number" descr="Returns the base-10 logarithm of a number.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="LogInv" func="yes">
+			<Overload retVal="Number" descr="Returns the inverse of the lognormal cumulative distribution function of x, where ln(x) is normally distributed with parameters mean and standard_dev. If p = LOGNORMDIST(x,...) then LOGINV(p,...) = x. Use the lognormal distribution to analyze logarithmically transformed data.">
+				<Param name="Number Probability"/>
+				<Param name="Number Mean"/>
+				<Param name="Number StdDeviation"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="LogNormDist" func="yes">
+			<Overload retVal="Number" descr="Returns the cumulative lognormal distribution of x, where ln(x) is normally distributed with the parameters mean and standard_dev. Use this function to analyze data that has been logarithmically transformed.">
+				<Param name="Number Value"/>
+				<Param name="Number Mean"/>
+				<Param name="Number StdDeviation"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Lower" func="yes">
+			<Overload retVal="String" descr="Converts all uppercase letters in a text string to lowercase.">
+				<Param name="String TextValue"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Max" func="yes">
+			<Overload retVal="Number" descr="Returns the largest value in a set of values.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>		
+		<KeyWord name="Me" func="no">
+			<Overload retVal="String" descr="Returns the current user name." />
+		</KeyWord>
+		<KeyWord name="Median" func="yes">
+			<Overload retVal="Number" descr="Returns the median of the given numbers. The median is the number in the middle of a set of numbers; that is, half the numbers have values that are greater than the median, and half have values that are less.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Mid" func="yes">
+			<Overload retVal="Number" descr="MID returns a specific number of characters from a text string, starting at the position you specify, based on the number of characters you specify.">
+				<Param name="String TextValue"/>
+				<Param name="Integer StartingIndex"/>
+				<Param name="Integer Length"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Min" func="yes">
+			<Overload retVal="Number" descr="Returns the smallest number in a set of values.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="MinA" func="yes">
+			<Overload retVal="Number" descr="Returns the smallest value in the list of arguments. Text and logical values such as TRUE and FALSE are compared as well as numbers.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Minute" func="yes">
+			<Overload retVal="Integer" descr="Returns the minutes of a time value. The minute is given as an integer, ranging from 0 to 59.">
+				<Param name="DateInteger Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Mod" func="yes">
+			<Overload retVal="Number" descr="Returns the remainder after number is divided by divisor. The result has the same sign as divisor.">
+				<Param name="Number Value"/>
+				<Param name="Number Divisor"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Month" func="yes">
+			<Overload retVal="Integer" descr="Returns the month of a date represented by a serial number. The month is given as an integer, ranging from 1 (January) to 12 (December).">
+				<Param name="DateInteger Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="NegBinomDist" func="yes">
+			<Overload retVal="Number" descr="Returns the negative binomial distribution. NEGBINOMDIST returns the probability that there will be number_f failures before the number_s-th success, when the constant probability of a success is probability_s. This function is similar to the binomial distribution, except that the number of successes is fixed, and the number of trials is variable. Like the binomial, trials are assumed to be independent. For example, you need to find 10 people with excellent reflexes, and you know the probability that a candidate has these qualifications is 0.3. NEGBINOMDIST calculates the probability that you will interview a certain number of unqualified candidates before finding all 10 qualified candidates.">
+				<Param name="Number FailureCount"/>
+				<Param name="Number SuccessThreshold"/>
+				<Param name="Number Probability"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="NormDist" func="yes">
+			<Overload retVal="Number" descr="Returns the normal distribution for the specified mean and standard deviation. This function has a very wide range of applications in statistics, including hypothesis testing.">
+				<Param name="Number Value"/>
+				<Param name="Number Mean"/>
+				<Param name="Number StdDeviation"/>
+				<Param name="Boolean Cumulative"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="NormSDist" func="yes">
+			<Overload retVal="Number" descr="Returns the standard normal cumulative distribution function. The distribution has a mean of 0 (zero) and a standard deviation of one. Use this function in place of a table of standard normal curve areas.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="NOT" func="yes">
+			<Overload retVal="Boolean" descr="Reverses the value of its argument. Use NOT when you want to make sure a value is not equal to one particular value.">
+				<Param name="Boolean Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Now" func="yes">
+			<Overload retVal="DateInteger" descr="Returns the serial number of the current date. The serial number is the date-time code used for date and time calculations. You can use the NOW function only as a default value; you cannot use it in a calculated column." />
+		</KeyWord>
+		<KeyWord name="NPer" func="yes">
+			<Overload retVal="Number" descr="Returns the number of periods for an investment based on periodic, constant payments and a constant interest rate.">
+				<Param name="Number InterestRate"/>
+				<Param name="Number Payment"/>
+				<Param name="Number PresentValue"/>
+				<Param name="[Number FutureValue]"/>
+				<Param name="[Integer Type:0-1]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="NPV" func="yes">
+			<Overload retVal="Number" descr="Calculates the net present value of an investment by using a discount rate and a series of future payments (negative values) and income (positive values).">
+				<Param name="Number Rate"/>
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Odd" func="yes">
+			<Overload retVal="Integer" descr="Returns number rounded up to the nearest odd integer.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="OR" func="yes">
+			<Overload retVal="Boolean" descr="Returns Yes if any argument is TRUE; returns No if all arguments are FALSE.">
+				<Param name="Logical Test1"/>
+				<Param name="Logical Test2"/>
+				<Param name="[Logical Test3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PI" func="yes">
+			<Overload retVal="Number" descr="Returns the value of Pi to 15 decimal places." />
+		</KeyWord>
+		<KeyWord name="Pmt" func="yes">
+			<Overload retVal="Number" descr="Calculates the payment for a loan based on constant payments and a constant interest rate.">
+				<Param name="Number InterestRate"/>
+				<Param name="Number TotalPayments"/>
+				<Param name="Number PresentValue"/>
+				<Param name="[Number FutureValue]"/>
+				<Param name="[Integer Type:0-1]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Power" func="yes">
+			<Overload retVal="Number" descr="Returns the result of a number raised to a power.">
+				<Param name="Number Value"/>
+				<Param name="Number Power"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PPmt" func="yes">
+			<Overload retVal="Number" descr="Returns the payment on the principal for a given period for an investment based on periodic, constant payments and a constant interest rate.">
+				<Param name="Number InterestRate"/>
+				<Param name="Number TargetPeriod"/>
+				<Param name="Number TotalPayments"/>
+				<Param name="Number PresentValue"/>
+				<Param name="[Number FutureValue]"/>
+				<Param name="[Integer Type:0-1]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Product" func="yes">
+			<Overload retVal="Number" descr="Multiplies all the numbers given as arguments and returns the product.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Proper" func="yes">
+			<Overload retVal="String" descr="Capitalizes the first letter and any other letters that follow a non-letter character in a text string. Converts all other letters in the text string to lowercase letters.">
+				<Param name="String TextValue"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="PV" func="yes">
+			<Overload retVal="Number" descr="Returns the present value of an investment. The present value is the total amount that a series of future payments is worth now. For example, when you borrow money, the loan amount is the present value to the lender.">
+				<Param name="Number InterestRate"/>				
+				<Param name="Number TotalPayments"/>
+				<Param name="Number Payment"/>
+				<Param name="[Number FutureValue]"/>
+				<Param name="[Integer Type:0-1]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Radians" func="yes">
+			<Overload retVal="Number" descr="Converts degrees to radians.">
+				<Param name="Number Degrees"/>				
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Replace" func="yes">
+			<Overload retVal="String" descr="REPLACE replaces part of a text string, based on the number of characters you specify, with a different text string.">
+				<Param name="String TextValue"/>
+				<Param name="Integer StartingIndex"/>
+				<Param name="Integer Length"/>
+				<Param name="String NewText"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Rept" func="yes">
+			<Overload retVal="String" descr="Repeats text a given number of times. Use REPT to add a number of instances of a text string.">
+				<Param name="String TextValue"/>
+				<Param name="Integer NumberOfTimes"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Right" func="yes">
+			<Overload retVal="String" descr="RIGHT returns the last characters in a text string, based on the number of characters you specify.">
+				<Param name="String TextValue"/>
+				<Param name="[Integer Length]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Round" func="yes">
+			<Overload retVal="Number" descr="Rounds a number to a specified number of digits.">
+				<Param name="Number Value"/>
+				<Param name="Integer DecimalPlaces"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RoundDown" func="yes">
+			<Overload retVal="Number" descr="Rounds a number down, toward zero.">
+				<Param name="Number Value"/>
+				<Param name="Integer DecimalPlaces"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="RoundUp" func="yes">
+			<Overload retVal="Number" descr="Rounds a number up, away from 0 (zero).">
+				<Param name="Number Value"/>
+				<Param name="Integer DecimalPlaces"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Search" func="yes">
+			<Overload retVal="Integer" descr="SEARCH returns the number of the character at which a specific character or text string is first found, beginning with start_num. Use SEARCH to determine the location of a character or text string within another text string so that you can use the MID or REPLACE functions to change the text.">
+				<Param name="String FindThis"/>
+				<Param name="String InsideThis"/>
+				<Param name="[Integer StartingIndex]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Second" func="yes">
+			<Overload retVal="Integer" descr="Returns the seconds of a time value. The second is given as an integer in the range 0 (zero) to 59.">
+				<Param name="DateInteger Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Sign" func="yes">
+			<Overload retVal="Number" descr="Determines the sign of a number. Returns 1 if the number is positive, zero (0) if the number is 0, and -1 if the number is negative.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Sin" func="yes">
+			<Overload retVal="Number" descr="Returns the sine of the given angle.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SinH" func="yes">
+			<Overload retVal="Number" descr="Returns the hyperbolic sine of a number.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SqRt" func="yes">
+			<Overload retVal="Number" descr="Returns a positive square root.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Standardize" func="yes">
+			<Overload retVal="Number" descr="Returns a normalized value from a distribution characterized by mean and standard_dev.">
+				<Param name="Number Value"/>
+				<Param name="Number Mean"/>
+				<Param name="Number StdDeviation"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StDeva" func="yes">
+			<Overload retVal="Number" descr="Estimates standard deviation based on a sample. The standard deviation is a measure of how widely values are dispersed from the average value (the mean). Text and logical values such as TRUE and FALSE are included in the calculation.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StDevP" func="yes">
+			<Overload retVal="Number" descr="Calculates standard deviation based on the entire population given as arguments. The standard deviation is a measure of how widely values are dispersed from the average value (the mean).">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="StDevPA" func="yes">
+			<Overload retVal="Number" descr="Calculates standard deviation based on the entire population given as arguments, including text and logical values. The standard deviation is a measure of how widely values are dispersed from the average value (the mean).">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Sum" func="yes">
+			<Overload retVal="Number" descr="Adds all the numbers in the specified arguments.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SumSq" func="yes">
+			<Overload retVal="Number" descr="Returns the sum of the squares of the arguments.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="SYD" func="yes">
+			<Overload retVal="Number" descr="Returns the sum-of-years' digits depreciation of an asset for a specified period.">
+				<Param name="Number InitialCost"/>
+				<Param name="Number Salvage"/>
+				<Param name="Number TotalPeriods"/>
+				<Param name="Number TargetPeriod"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TanH" func="yes">
+			<Overload retVal="Number" descr="Returns the hyperbolic tangent of a number.">
+				<Param name="Number Value"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TDist" func="yes">
+			<Overload retVal="Number" descr="Returns the Percentage Points (probability) for the Student t-distribution where a numeric value (x) is a calculated value of t for which the Percentage Points are to be computed. The t-distribution is used in the hypothesis testing of small sample data sets. Use this function in place of a table of critical values for the t-distribution.">
+				<Param name="Number Value"/>
+				<Param name="Number Degrees"/>
+				<Param name="Number Tails"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Text" func="yes">
+			<Overload retVal="String" descr="Converts a value to text in a specific number format.">
+				<Param name="Number Value"/>
+				<Param name="String FormatString"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Time" func="yes">
+			<Overload retVal="Number" descr="Returns the decimal number for a particular time. The decimal number returned by TIME is a value ranging from 0 (zero) to 0.99999999, representing the times from 0:00:00 (12:00:00 AM) to 23:59:59 (11:59:59 P.M.).">
+				<Param name="Number Hour"/>
+				<Param name="Number Minute"/>
+				<Param name="Number Second"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TInv" func="yes">
+			<Overload retVal="Number" descr="Returns the t-value of the Student's t-distribution as a function of the probability and the degrees of freedom.">
+				<Param name="Number Probability"/>
+				<Param name="Number Degrees"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Today" func="no">
+			<Overload retVal="DateInteger" descr="Returns the serial number of the current date. The serial number is the date-time code used for date and time calculations. You can use the TODAY function only as a default value; you cannot use it in a calculated column." />			
+		</KeyWord>
+		<KeyWord name="Trim" func="yes">
+			<Overload retVal="String" descr="Removes all spaces from text except for single spaces between words. Use TRIM on text that you have received from another application that may have irregular spacing.">
+				<Param name="String TextValue"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="TRUE" func="no">
+			<Overload retVal="Boolean" descr="Returns the logical value TRUE." />
+		</KeyWord>
+		<KeyWord name="Upper" func="yes">
+			<Overload retVal="String" descr="Converts text to uppercase.">
+				<Param name="String TextValue"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="USDollar" func="yes">
+			<Overload retVal="String" descr="Converts a number to text using currency format, with the decimals rounded to the specified place. The format used is $#,##0.00_);($#,##0.00).">
+				<Param name="Number Value"/>
+				<Param name="[Number DecimalPlaces]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Value" func="yes">
+			<Overload retVal="Number" descr="Converts a text string that represents a number to a number.">
+				<Param name="String TextValue"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Var" func="yes">
+			<Overload retVal="Number" descr="Estimates variance based on a sample.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="VarA" func="yes">
+			<Overload retVal="Number" descr="Estimates variance based on a sample. In addition to numbers, text and logical values such as TRUE and FALSE are included in the calculation.">
+				<Param name="Object Value1"/>
+				<Param name="Object Value2"/>
+				<Param name="[Object Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="VarP" func="yes">
+			<Overload retVal="Number" descr="Calculates variance based on the entire population.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="VarPA" func="yes">
+			<Overload retVal="Number" descr="Calculates variance based on the entire population. In addition to numbers, text and logical values such as TRUE and FALSE are included in the calculation.">
+				<Param name="Number Value1"/>
+				<Param name="Number Value2"/>
+				<Param name="[Number Value3...]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Weekday" func="yes">
+			<Overload retVal="Integer" descr="Returns the day of the week corresponding to a date. The day is given as an integer, ranging from 1 (Sunday) to 7 (Saturday), by default.">
+				<Param name="DateInteger Value"/>
+				<Param name="[Integer ReturnType:1-2-3]"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Weibull" func="yes">
+			<Overload retVal="Number" descr="Returns the Weibull distribution. Use this distribution in reliability analysis, such as calculating a device's mean time to failure.">
+				<Param name="Number Value"/>
+				<Param name="Number Alpha"/>
+				<Param name="Number Beta"/>
+				<Param name="Boolean Cumulative"/>
+			</Overload>
+		</KeyWord>
+		<KeyWord name="Year" func="yes">
+			<Overload retVal="Integer" descr="Returns the year corresponding to a date.">
+				<Param name="DateInteger Value"/>
+			</Overload>
+		</KeyWord>
+	</AutoComplete>
+</NotepadPlus>

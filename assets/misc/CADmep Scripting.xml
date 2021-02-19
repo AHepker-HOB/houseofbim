@@ -1,0 +1,64 @@
+<NotepadPlus>
+    <UserLang name="COD" ext="COD" udlVersion="2.1">
+        <Settings>
+            <Global caseIgnored="yes" allowFoldOfComments="yes" foldCompact="yes" forcePureLC="0" decimalSeparator="0" />
+            <Prefix Keywords1="no" Keywords2="no" Keywords3="no" Keywords4="no" Keywords5="no" Keywords6="no" Keywords7="no" Keywords8="no" />
+        </Settings>
+        <KeywordLists>
+            <Keywords name="Comments">00REM 01 02 03Number( 04)</Keywords>
+            <Keywords name="Numbers, prefix1"></Keywords>
+            <Keywords name="Numbers, prefix2"></Keywords>
+            <Keywords name="Numbers, extras1"></Keywords>
+            <Keywords name="Numbers, extras2"></Keywords>
+            <Keywords name="Numbers, suffix1"></Keywords>
+            <Keywords name="Numbers, suffix2"></Keywords>
+            <Keywords name="Numbers, range"></Keywords>
+            <Keywords name="Operators1">+ - / * &gt; &lt; . , = ( )</Keywords>
+            <Keywords name="Operators2">And Array As Dim File FileLocator Include ItemStruct New Not Object Or Requires Run Task</Keywords>
+            <Keywords name="Folders in code1, open">Function</Keywords>
+            <Keywords name="Folders in code1, middle"></Keywords>
+            <Keywords name="Folders in code1, close">EndFunction &quot;End Function&quot;</Keywords>
+            <Keywords name="Folders in code2, open">If</Keywords>
+            <Keywords name="Folders in code2, middle">Else &quot;Else If&quot;</Keywords>
+            <Keywords name="Folders in code2, close">EndIf &quot;End If&quot;</Keywords>
+            <Keywords name="Folders in comment, open"></Keywords>
+            <Keywords name="Folders in comment, middle"></Keywords>
+            <Keywords name="Folders in comment, close"></Keywords>
+            <Keywords name="Keywords1">Aborted &#x000D;&#x000A;Active &#x000D;&#x000A;AirTurns &#x000D;&#x000A;Alias &#x000D;&#x000A;Alt &#x000D;&#x000A;Alternate &#x000D;&#x000A;Annotation &#x000D;&#x000A;Area &#x000D;&#x000A;Beading &#x000D;&#x000A;Bitmap &#x000D;&#x000A;BoughtOut &#x000D;&#x000A;ButtonAlias &#x000D;&#x000A;ButtonCode &#x000D;&#x000A;CadBlock &#x000D;&#x000A;Catalogue &#x000D;&#x000A;Changed &#x000D;&#x000A;CID &#x000D;&#x000A;CoilWidth &#x000D;&#x000A;Colour &#x000D;&#x000A;Comment &#x000D;&#x000A;Connectors &#x000D;&#x000A;CostByLength &#x000D;&#x000A;CostType &#x000D;&#x000A;Count &#x000D;&#x000A;CutType &#x000D;&#x000A;Dampers &#x000D;&#x000A;DatabaseID &#x000D;&#x000A;Date &#x000D;&#x000A;DateTime &#x000D;&#x000A;DBLock &#x000D;&#x000A;Decoiler &#x000D;&#x000A;Description &#x000D;&#x000A;Dims &#x000D;&#x000A;DimSide &#x000D;&#x000A;DimSideLock &#x000D;&#x000A;DoubleWall &#x000D;&#x000A;Drawing &#x000D;&#x000A;DWLock &#x000D;&#x000A;Entries &#x000D;&#x000A;EOF &#x000D;&#x000A;ExtraETime &#x000D;&#x000A;ExtraETimeRate &#x000D;&#x000A;ExtraEtimeUnits &#x000D;&#x000A;ExtraFTime &#x000D;&#x000A;ExtraFTimeRate &#x000D;&#x000A;ExtraFTimeUnits &#x000D;&#x000A;FabTable &#x000D;&#x000A;FabTableLock&#x000D;&#x000A;Facing &#x000D;&#x000A;FacingLock &#x000D;&#x000A;Field1 &#x000D;&#x000A;Field2 &#x000D;&#x000A;FileCount &#x000D;&#x000A;FileName &#x000D;&#x000A;FixRelative &#x000D;&#x000A;FlowMax &#x000D;&#x000A;FlowMin &#x000D;&#x000A;FolderCount &#x000D;&#x000A;Gauge &#x000D;&#x000A;GaugeLock &#x000D;&#x000A;Group &#x000D;&#x000A;Guid &#x000D;&#x000A;Guid64 &#x000D;&#x000A;Handle &#x000D;&#x000A;HasAlias &#x000D;&#x000A;HasArea &#x000D;&#x000A;HasBoughtOut &#x000D;&#x000A;HasCadBlock &#x000D;&#x000A;HasCustomData &#x000D;&#x000A;HasCustomDatas &#x000D;&#x000A;HasDatabaseID &#x000D;&#x000A;HasDims &#x000D;&#x000A;HasFlow &#x000D;&#x000A;HasOptions &#x000D;&#x000A;HasOrder &#x000D;&#x000A;HasProduct &#x000D;&#x000A;HasRevision &#x000D;&#x000A;HasSKey &#x000D;&#x000A;HasWeight &#x000D;&#x000A;History &#x000D;&#x000A;ID &#x000D;&#x000A;Info &#x000D;&#x000A;InsSpec &#x000D;&#x000A;Installtable &#x000D;&#x000A;InstalltableLock&#x000D;&#x000A;Insulation &#x000D;&#x000A;IsOpen &#x000D;&#x000A;ISpecLock &#x000D;&#x000A;Items &#x000D;&#x000A;LastActivated &#x000D;&#x000A;Library &#x000D;&#x000A;LifeSpan &#x000D;&#x000A;Links &#x000D;&#x000A;Locked &#x000D;&#x000A;ManyOldStatus &#x000D;&#x000A;MatAbrv &#x000D;&#x000A;Material &#x000D;&#x000A;MaterialLock&#x000D;&#x000A;Message &#x000D;&#x000A;Model &#x000D;&#x000A;Name &#x000D;&#x000A;NestPriority &#x000D;&#x000A;NextPriority &#x000D;&#x000A;Notes &#x000D;&#x000A;Number &#x000D;&#x000A;Numbers &#x000D;&#x000A;NumValue &#x000D;&#x000A;OperatingCost &#x000D;&#x000A;Options &#x000D;&#x000A;Order &#x000D;&#x000A;Owner &#x000D;&#x000A;Pallet &#x000D;&#x000A;Param &#x000D;&#x000A;Params &#x000D;&#x000A;PartsCut &#x000D;&#x000A;Path &#x000D;&#x000A;PatNo &#x000D;&#x000A;PriceList &#x000D;&#x000A;PriceTableLock &#x000D;&#x000A;Product &#x000D;&#x000A;Progress &#x000D;&#x000A;Project &#x000D;&#x000A;Qty &#x000D;&#x000A;Quantity &#x000D;&#x000A;Reference &#x000D;&#x000A;Revision &#x000D;&#x000A;Scale &#x000D;&#x000A;Sealant &#x000D;&#x000A;Seams &#x000D;&#x000A;Section &#x000D;&#x000A;Selection &#x000D;&#x000A;Service &#x000D;&#x000A;ServiceType &#x000D;&#x000A;SKey &#x000D;&#x000A;SkinDecoiler &#x000D;&#x000A;SkinGauge &#x000D;&#x000A;SkinMaterial &#x000D;&#x000A;SkinMaterialLock &#x000D;&#x000A;SkinMaterials &#x000D;&#x000A;SkinSeam &#x000D;&#x000A;SkinSide &#x000D;&#x000A;SmallLength &#x000D;&#x000A;Spacing &#x000D;&#x000A;Specification &#x000D;&#x000A;SpecLock &#x000D;&#x000A;Splitters &#x000D;&#x000A;Spool &#x000D;&#x000A;SpoolColour &#x000D;&#x000A;Status &#x000D;&#x000A;Statuses &#x000D;&#x000A;StatusLock &#x000D;&#x000A;StdLength &#x000D;&#x000A;StdQty &#x000D;&#x000A;Stiffeners &#x000D;&#x000A;StructureType &#x000D;&#x000A;SubItems &#x000D;&#x000A;Support &#x000D;&#x000A;Target &#x000D;&#x000A;Type &#x000D;&#x000A;UserID &#x000D;&#x000A;Value &#x000D;&#x000A;Version &#x000D;&#x000A;Weight &#x000D;&#x000A;WeightLock &#x000D;&#x000A;WireGauge &#x000D;&#x000A;Zone</Keywords>
+            <Keywords name="Keywords2">Add&#x000D;&#x000A;AddCustomData&#x000D;&#x000A;BeginProgress&#x000D;&#x000A;BitmapFile&#x000D;&#x000A;CanDoubleWall&#x000D;&#x000A;CanRotary&#x000D;&#x000A;Close&#x000D;&#x000A;EndLocation&#x000D;&#x000A;EndProgress&#x000D;&#x000A;Level&#x000D;&#x000A;Load&#x000D;&#x000A;Number&#x000D;&#x000A;ReadLine&#x000D;&#x000A;RefreshCost&#x000D;&#x000A;RemoveHoles&#x000D;&#x000A;Save&#x000D;&#x000A;Scan&#x000D;&#x000A;SetFlow&#x000D;&#x000A;SetStatus&#x000D;&#x000A;UnCatalogue&#x000D;&#x000A;Update&#x000D;&#x000A;WriteDXF&#x000D;&#x000A;WriteLine</Keywords>
+            <Keywords name="Keywords3">&quot;Else If&quot; &#x000D;&#x000A;&quot;End Function&quot; &#x000D;&#x000A;&quot;End If&quot; &#x000D;&#x000A;&quot;End Select&quot; &#x000D;&#x000A;&quot;End While&quot; &#x000D;&#x000A;&quot;Loop Until&quot; &#x000D;&#x000A;Case &#x000D;&#x000A;Else &#x000D;&#x000A;ElseIf &#x000D;&#x000A;EndFunction &#x000D;&#x000A;EndIf &#x000D;&#x000A;EndSelect &#x000D;&#x000A;EndWhile &#x000D;&#x000A;For &#x000D;&#x000A;Function &#x000D;&#x000A;If &#x000D;&#x000A;Loop &#x000D;&#x000A;Next &#x000D;&#x000A;Return &#x000D;&#x000A;Select &#x000D;&#x000A;Step &#x000D;&#x000A;Then &#x000D;&#x000A;While</Keywords>
+            <Keywords name="Keywords4">File_End&#x000D;&#x000A;File_Start&#x000D;&#x000A;ForInput&#x000D;&#x000A;ForOutput&#x000D;&#x000A;IsText&#x000D;&#x000A;MapPath_Home&#x000D;&#x000A;MapPath_Items</Keywords>
+            <Keywords name="Keywords5">Abs&#x000D;&#x000A;ACos&#x000D;&#x000A;ASin&#x000D;&#x000A;ATan&#x000D;&#x000A;Cos&#x000D;&#x000A;Exp&#x000D;&#x000A;Log&#x000D;&#x000A;Pow&#x000D;&#x000A;Round&#x000D;&#x000A;RoundDown&#x000D;&#x000A;RoundUp&#x000D;&#x000A;Sign&#x000D;&#x000A;Sin&#x000D;&#x000A;Sqr&#x000D;&#x000A;SqRt&#x000D;&#x000A;Tan</Keywords>
+            <Keywords name="Keywords6">AirTurn&#x000D;&#x000A;Connector&#x000D;&#x000A;Connector&#x000D;&#x000A;CustomData&#x000D;&#x000A;Damper&#x000D;&#x000A;Entry&#x000D;&#x000A;Folder&#x000D;&#x000A;Link&#x000D;&#x000A;Option&#x000D;&#x000A;PartCut&#x000D;&#x000A;Product&#x000D;&#x000A;Seam&#x000D;&#x000A;Selection&#x000D;&#x000A;SkinConnector&#x000D;&#x000A;Splitter&#x000D;&#x000A;Stiffener&#x000D;&#x000A;SubItem</Keywords>
+            <Keywords name="Keywords7">Asc&#x000D;&#x000A;Ascii&#x000D;&#x000A;Chr&#x000D;&#x000A;GetFileExt&#x000D;&#x000A;GetFileName&#x000D;&#x000A;GetFilePath&#x000D;&#x000A;InStr&#x000D;&#x000A;Left&#x000D;&#x000A;Len&#x000D;&#x000A;Lower&#x000D;&#x000A;LTrim&#x000D;&#x000A;Mid&#x000D;&#x000A;Right&#x000D;&#x000A;RTrim&#x000D;&#x000A;SubString&#x000D;&#x000A;Trim&#x000D;&#x000A;Upper&#x000D;&#x000A;WildCard&#x000D;&#x000A;</Keywords>
+            <Keywords name="Keywords8">Debug&#x000D;&#x000A;False&#x000D;&#x000A;Item&#x000D;&#x000A;Job&#x000D;&#x000A;Null&#x000D;&#x000A;Pi&#x000D;&#x000A;Query&#x000D;&#x000A;True&#x000D;&#x000A;Void</Keywords>
+            <Keywords name="Delimiters">00( 01 02) 03&quot; 04 05&quot; 06OldStatus[ 07 08] 09Dim[ 10 11] 12Support[ 13 14] 15[ 16 17] 18Status[ 19 20] 21File[ 22 23]</Keywords>
+        </KeywordLists>
+        <Styles>
+            <WordsStyle name="DEFAULT" fgColor="000000" bgColor="FFFFFF" fontName="Consolas" fontStyle="0" fontSize="12" nesting="0" />
+            <WordsStyle name="COMMENTS" fgColor="828282" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="117702655" />
+            <WordsStyle name="LINE COMMENTS" fgColor="000000" bgColor="C0C0C0" fontName="Consolas" fontStyle="0" fontSize="12" nesting="0" />
+            <WordsStyle name="NUMBERS" fgColor="FF6AB5" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="KEYWORDS1" fgColor="FF8000" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="KEYWORDS2" fgColor="828282" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="KEYWORDS3" fgColor="0000FF" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="KEYWORDS4" fgColor="C0C0C0" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="KEYWORDS5" fgColor="FF44FF" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="KEYWORDS6" fgColor="FF0000" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="KEYWORDS7" fgColor="008040" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="KEYWORDS8" fgColor="A8A8FF" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="OPERATORS" fgColor="0000A0" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="FOLDER IN CODE1" fgColor="0000FF" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="FOLDER IN CODE2" fgColor="0000FF" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="FOLDER IN COMMENT" fgColor="000000" bgColor="C0C0C0" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="DELIMITERS1" fgColor="828282" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="117701887" />
+            <WordsStyle name="DELIMITERS2" fgColor="00CA65" bgColor="FFFFFF" fontName="Consolas" fontStyle="3" fontSize="12" nesting="0" />
+            <WordsStyle name="DELIMITERS3" fgColor="FF0000" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="DELIMITERS4" fgColor="FF0000" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="2" />
+            <WordsStyle name="DELIMITERS5" fgColor="FF0000" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="DELIMITERS6" fgColor="FF0000" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="2" />
+            <WordsStyle name="DELIMITERS7" fgColor="FF0000" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+            <WordsStyle name="DELIMITERS8" fgColor="FF0000" bgColor="FFFFFF" fontName="Consolas" fontStyle="1" fontSize="12" nesting="0" />
+        </Styles>
+    </UserLang>
+</NotepadPlus>
