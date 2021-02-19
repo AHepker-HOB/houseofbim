@@ -1,0 +1,32 @@
+---
+published: true
+layout: post
+title: "Project Honey Badger #1 - Fabricating Fabrication PCFs for Plant 3D"
+date: 2016-09-30 23:41
+author: Andrew Hepker
+comments: true
+categories: [AutoCAD, Fabrication CADmep, Plant3D]
+tags: [Fabrication, isoconfig.xml, Isogen, isometric, PCF]
+---
+I'd like to start by saying that this project has been a smashing success. Despite the seemingly insurmountable list of problems that could and did arise on a project of this magnitude, we have managed to create a fully functional, customizable, and efficient platform to generate 2D or single line isometric drawings. We are using a combination of MAP scripting and LISP to generate PCF files directly from Autodesk Fabrication model content.
+
+This project started purely out of necessity. A directive was received from our project management team to produce 700-800 additional isometric fabrication drawings without impacting project schedule or budget, all while utilizing the tools and software currently available. This would typically add approximately 500-2000 additional man-hours to a project and would certainly impact the schedule. Fortunately, we are creative thinkers who were up to the challenge.
+
+The level of experience in Autodesk Fabrication CADmep in our department is impressive to say the least, and the quality of isometric drawings produced by a talented detailer borders on immaculate *(the next post will include side by side comparisons)*. Unfortunately, Fabrication is not the most efficient software at producing isos. Having some experience with AutoCAD Plant 3D and CADworx, we undertook the challenge of producing 2D or single-line isometrics using the PCF file format, while still performing all 3D design tasks in Fabrication, which is our specialty.
+
+The first decision was which software to use to produce the isos, and while we had had good experience in the past producing isos directly from CADworx using the built in Isogen platform, we were unsure if there was a direct PCF to Isogen interface. Immediate access to the 30 day trial version of Plant 3D for testing, and the knowledge that we could produce an iso directly from a PCF file, the decision was made (for the time being) and testing could commence. On a side note, our initial introduction to Plant 3D, in 2013, was unpleasant to say the least, and we truly dreaded the idea of being stuck with this over-managed and convoluted software for something as simple as producing 2D isos.
+
+The initial challenge was to determine the format of a PCF file and how Plant 3D would read that information. So, we used the Autodesk Fabrication PCFExport command and drew some generic piping in the sample project in Plant 3D and compared the PCF files. Luckily, the Fabrication PCFExport, while being entirely un-customizable, does provide a reasonable amount of information, albeit mostly unnecessary. The primary source of information during our initial testing came from [Demystifying AutoCAD Plant 3D Isometrics](http://docs.autodesk.com/PLNT3D/2014/ENU/De-mystifying%20AutoCAD%20Plant%203D%20Isometrics.pdf) written by the [PDO Team](http://www.pdoteam.com/). There are some seriously talented folks over at PDO a few of whom we have had the pleasure of receiving Plant 3D training from in the past. Unfortunately, at the time that I had received training, I was primarily concerned with modeling and project management, instead of iso production and configuration. So down the rabbit hole we went.
+
+We spent the first evening of testing simply deleting and editing lines of the PCF produced by Fabrication to determine the bare minimum amount of information required by Plant to produce an iso.
+
+The first thing we discovered was that there are a few CID patterns in Fabrication that appear to have hard-coded Skeys associated with them, but the remainder were all listed as MISC-COMPONENT. The first chore at that point was to determine what SKeys were available in Plant and the best way to store, access, and modify them in our Fabrication database.  
+*Note: Although certain Fabrication CID patterns have SKeys associated to them, it is not true for all patterns. ~~The Skey information is also hard coded into the patterns and therefore, not editable, except through the FabricationAPI.~~*
+
+> Edit: I mistakenly stated that SKey information was hard coded into patterns and not editable, which is not accurate. While it is true that not all CID patterns have Skeys, the patterns that do support SKey have a property called PCF SKey which is editable. (item.pcfskey = "SKEY" for those interested in scripting this). Unfortunately, there is no option to edit the PCF Description, which controls how the IsoConfig.xml handles the objects. You can change the pattern but not the logic that handles it.
+
+The next month of development was the equivalent of the Spartan Death Race for us. Issues piled upon problems with a few merciless obstacles thrown in for good measure. We encountered everything from Fatal Errors in AutoCAD to stubborn and mislayed settings in Plant3D. The iso.atr file, which is a potent tool for producing isos based on Plant3D content, is completely useless, and more often than not, a complete hindrance to producing isos from PCF files created outside of Plant. Finding inadequately documented or non-existent settings in the isoconfig.xml is certainly not a task for the faint of heart. Making Plant3D perform in any way that you would deem logical is a complete nightmare. Nevertheless, we plowed through the muck and reached our destination.
+
+We are currently 5 months into this project and still improving day by day. That said, we produced our first drawing using the Plant3D PCFtoIso function, using a PCF file that was generated directly out of Fabrication, 4 weeks after that initial night of stumbling through the PCF file format. We have come a long ways since that first iso, but have been in production using this process for the last 4 months. The current workload for this project is primarily managing unique situations, and developing tools to handle the unique piping systems and components found in the pharmaceutical industry.
+
+This is the first of many posts which will be dedicated to Project Honey Badger, and we will be going into detail on nearly every aspect of this process. We hope that you will join us in reliving this experience, and please feel free to contact us if you have any questions, comments or suggestions.

@@ -1,0 +1,12 @@
+---
+permalink: robots.txt
+# The robots rules
+---
+
+User-agent: *
+
+Disallow: /norobots/
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}
+
+# hob{th1s_1s_th3_fl4g}

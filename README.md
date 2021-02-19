@@ -1,3 +1,3 @@
 # houseofbim
 
-Another test
+New GitHub Pages site for House of BIM

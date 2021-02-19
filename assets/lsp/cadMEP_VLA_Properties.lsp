@@ -1,0 +1,27 @@
+(defun ParseDescription (obj / desc size)
+  (setq desc (vlax-get-property obj 'Description))
+  (if (vl-string-search "[" desc)
+    (setq size (vl-string-trim "[] " (cadr(acet-str-to-list "[" desc)))
+	  desc (vl-string-trim "[] " (car(acet-str-to-list "[" desc))))
+    (setq desc (vl-string-trim "[] " desc)))
+  (list desc size)
+  )
+
+(defun ParseCustomData (obj / cdata)
+  (setq cdata (vlax-get-property obj 'CustomData)
+	cdata (acet-str-to-list "," cdata)
+	cdata (mapcar '(lambda (x) (acet-str-to-list " = " x)) cdata))
+  )
+
+(defun ParsePoints (obj / mid pls)
+  (foreach l (acet-str-to-list ";" (vlax-get-property obj 'Points))
+    (setq l (acet-str-replace "," " " l))
+    (if (vl-string-search "MIDPOINT" l)
+      (setq mid (read(strcat "(" (substr l 11) ")")))
+      (setq pls (append pls (list (read (strcat "(" (vl-string-trim "ENDPOINTS:" L) ")")))))
+      )
+    )
+  (list pls mid)
+  )
+
+

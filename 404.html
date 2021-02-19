@@ -1,0 +1,28 @@
+---
+layout: page
+title: "404: Page not found"
+permalink: /404.html
+
+redirect_from:
+  - /norobots/
+  - /assets/
+  - /posts/
+
+dynamic_title: true
+---
+
+<!-- AMH - Added regex redirect from old Wordpress urls to new url. Ex. replace date '2018/05/04' with 'posts' -->
+<script type="text/javascript">
+  if ( /.+\d{4}\/\d{2}\/\d{2}.+/.test(window.location.href) ) {
+    window.location.replace(window.location.href.replace(/\d{4}\/\d{2}\/\d{2}/, 'posts'));
+  }
+</script>
+
+<div class="lead">
+  <p>Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. </p>
+  <p>
+    <a href="{{ '/' | relative_url }}">Head back Home</a>
+    to try finding it again, or search for it on the
+    <a href="{{ 'archives' | relative_url }}">Archives page</a>.
+  </p>
+</div>
