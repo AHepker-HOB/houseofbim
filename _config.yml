@@ -79,7 +79,8 @@ theme_mode:   # [light|dark]
 img_cdn: ''
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://www.houseofbim.com/assets/img/favicons/favicon-96x96.png
+# avatar: https://www.houseofbim.com/assets/img/favicons/favicon-96x96.png
+avatar: /assets/img/favicons/favicon-96x96.png
 
 # boolean type, the global switch for ToC in posts.
 toc: true
