@@ -28,7 +28,7 @@ using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.EditorInput;
 using Autodesk.Fabrication;
 
-namespace FabricaionExample
+namespace FabricationExample
 {
     public class FabCommand
     {
