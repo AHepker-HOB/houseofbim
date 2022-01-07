@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en-US" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="pv-cache-enabled" content="false"><meta name="generator" content="Jekyll v4.2.0" /><meta property="og:title" content="AutoCAD Plant 3D PnPIso.exe Scripting" /><meta name="author" content="Andrew Hepker" /><meta property="og:locale" content="en_US" /><meta name="description" content="AutoCAD Plant 3D is a fairly robust program with one well-known and useful feature, which is the production of complete isometric drawings directly from model content. Plant 3D utilizes the PCF file format which is a standardized text file that contains information describing the pipe and fittings in the model. Plant 3D also uses its own standalone application to process these files into isos, called PnPIso.exe. If you use any of the iso production commands in Plant 3D and open your task manager, you will see that the PnPIso.exe process will be running and will terminate as soon as the drawings are produced." /><meta property="og:description" content="AutoCAD Plant 3D is a fairly robust program with one well-known and useful feature, which is the production of complete isometric drawings directly from model content. Plant 3D utilizes the PCF file format which is a standardized text file that contains information describing the pipe and fittings in the model. Plant 3D also uses its own standalone application to process these files into isos, called PnPIso.exe. If you use any of the iso production commands in Plant 3D and open your task manager, you will see that the PnPIso.exe process will be running and will terminate as soon as the drawings are produced." /><link rel="canonical" href="/posts/autocad-plant-3d-pnpiso-exe-scripting/" /><meta property="og:url" content="/posts/autocad-plant-3d-pnpiso-exe-scripting/" /><meta property="og:site_name" content="House of BIM" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2016-10-22T19:52:00-07:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="AutoCAD Plant 3D PnPIso.exe Scripting" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"headline":"AutoCAD Plant 3D PnPIso.exe Scripting","dateModified":"2016-10-22T19:52:00-07:00","datePublished":"2016-10-22T19:52:00-07:00","description":"AutoCAD Plant 3D is a fairly robust program with one well-known and useful feature, which is the production of complete isometric drawings directly from model content. Plant 3D utilizes the PCF file format which is a standardized text file that contains information describing the pipe and fittings in the model. Plant 3D also uses its own standalone application to process these files into isos, called PnPIso.exe. If you use any of the iso production commands in Plant 3D and open your task manager, you will see that the PnPIso.exe process will be running and will terminate as soon as the drawings are produced.","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/autocad-plant-3d-pnpiso-exe-scripting/"},"url":"/posts/autocad-plant-3d-pnpiso-exe-scripting/","@type":"BlogPosting","author":{"@type":"Person","name":"Andrew Hepker"},"@context":"https://schema.org"}</script><title>AutoCAD Plant 3D PnPIso.exe Scripting | House of BIM</title><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon.png"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon-precomposed.png"><link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicons/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicons/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/manifest.json"><meta name='msapplication-config' content='/assets/img/favicons/browserconfig.xml'><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-TileImage" content="/assets/img/favicons/ms-icon-144x144.png"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="cdn.jsdelivr.net"><link rel="dns-prefetch" href="cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script defer src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id="></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); }); </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end">
+<div class="profile-wrapper text-center">
+<div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="/assets/img/favicons/favicon-96x96.png" alt="avatar" onerror="this.style.display='none'"> </a>
+</div>
+<div class="site-title mt-3"> <a href="/">House of BIM</a>
+</div>
+<div class="site-subtitle font-italic">Stuff and Things...it's what we do</div>
+</div>
+<ul class="w-100">
+<li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a>
+</li>
+<li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a>
+</li>
+<li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a>
+</li>
+<li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-database ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a>
+</li>
+<li class="nav-item"> <a href="/links/" class="nav-link"> <i class="fa-fw fa fa-link ml-xl-3 mr-xl-3 unloaded"></i> <span>LINKS</span> </a>
+</li>
+<li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fa fa-question ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a>
+</li>
+</ul>
+<div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center"> <a href="https://github.com/AHepker-HOB" aria-label="github" class="order-3" target="_blank" rel="noopener noreferrer"> <i class="fab fa-github"></i> </a> <a href="https://www.linkedin.com/in/andrew-hepker-738b0b80/" aria-label="linkedin" class="order-4" target="_blank" rel="noopener noreferrer"> <i class="fab fa-linkedin"></i> </a> <a href="javascript:location.href=%5B'mailto:',%20'andrew',%20'.',%20'hepker',%20'@house',%20'ofbim.com'%5D.join('')" aria-label="email" class="order-5"> <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" class="order-6"> <i class="fas fa-rss"></i> </a> <span class="icon-border order-2"></span> <span id="mode-toggle-wrapper" class="order-1"> <i class="mode-toggle fas fa-adjust"></i> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } var self = this; /* always follow the system prefers */ this.sysDarkPrefers.addListener(function() { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.updateMermaid(); }); } /* constructor() */ setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode == ModeToggle.DARK_MODE; } get isLightMode() { return this.mode == ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer) ) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } updateMermaid() { if (typeof mermaid !== "undefined") { let expectedTheme = (this.modeStatus === ModeToggle.DARK_MODE? "dark" : "default"); let config = { theme: expectedTheme }; /* re-render the SVG › <https://github.com/mermaid-js/mermaid/issues/311#issuecomment-332557344> */ $(".mermaid").each(function() { let svgCode = $(this).prev().children().html(); $(this).removeAttr("data-processed"); $(this).html(svgCode); }); mermaid.initialize(config); mermaid.init(undefined, ".mermaid"); } } flipMode() { if (this.hasMode) { if (this.isSysDarkPrefer) { if (this.isLightMode) { this.clearMode(); } else { this.setLight(); } } else { if (this.isDarkMode) { this.clearMode(); } else { this.setDark(); } } } else { if (this.isSysDarkPrefer) { this.setLight(); } else { this.setDark(); } } this.updateMermaid(); } /* flipMode() */ } /* ModeToggle */ let toggle = new ModeToggle(); $(".mode-toggle").click(function() { toggle.flipMode(); }); </script> </span>
+</div>
+</div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Posts </a> </span> <span>AutoCAD Plant 3D PnPIso.exe Scripting</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div>
+<i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel">Cancel</span>
+</div></div><div id="main-wrapper">
+<div id="main">
+<div class="row">
+<div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+<h1 data-toc-skip>AutoCAD Plant 3D PnPIso.exe Scripting</h1>
+<div class="post-meta text-muted d-flex flex-column">
+<div> <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Sat, Oct 22, 2016, 7:52 PM -0700"> Oct 22, 2016 <i class="unloaded">2016-10-22T19:52:00-07:00</i> </span> by <span class="author"> Andrew Hepker </span>
+</div>
+<div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="1116 words">6 min</span>
+</div>
+</div>
+<div class="post-content">
+<p>AutoCAD Plant 3D is a fairly robust program with one well-known and useful feature, which is the production of complete isometric drawings directly from model content. Plant 3D utilizes the PCF file format which is a standardized text file that contains information describing the pipe and fittings in the model. Plant 3D also uses its own standalone application to process these files into isos, called PnPIso.exe. If you use any of the iso production commands in Plant 3D and open your task manager, you will see that the PnPIso.exe process will be running and will terminate as soon as the drawings are produced.</p>
+<p>A few days ago, a colleague sent a screenshot of a post from Peter Quinn, the Plant 3D Product Manager at Autodesk, in which he briefly discussed initiating the Plant 3D PnPIso.exe through Python scripting (see below). I searched far and wide for the post to see if there was any further information but was unable to find anything at all related to the subject. Being of curious mind, I decided to dig a little deeper.</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/img/102316_0244_autocadplan1.png" alt=""></p>
+<p>Unfortunately, it was not as straightforward as I had hoped, and as previously stated, there is virtually no information available on the subject. Running PnPIso.exe from the command line and getting a list of arguments as stated in the post did not work. In fact, running the exe from the command line in AutoCAD or Windows provided the same result as double-clicking on the application, which is a very brief flash of a console and immediate termination of the process. However, by creating some generic folders on a local drive, and testing various forms of syntax for the arguments, the exe eventually ran. The minimum requirement for the console to load is the /config: argument. This tells PnPIso.exe which IsoConfig.xml to load.</p>
+<p>Method #1 - <code class="language-plaintext highlighter-rouge">(command "start" "pnpiso.exe /config:")</code></p>
+<p>This method is a little bit tricky. Due to the fact that commands issued through the LISP command function are processed by LISP in a different manner than they are processed by the command line means that the exe path cannot contain spaces. This is a little tricky since the typical installation of Plant 3D is at &lt;drive&gt;:\Program Files\Autodesk\AutoCAD 20##\PLNT3D\PnPIso.exe. The example below demonstrates running the application through Windows Run which does not work when formatted for and issued through LISP.</p>
+<p>Note: All examples below show the arguments on separate lines for clarity only. The application path and arguments should all be separated by a single space. Click <a href="/assets/misc/PnPIso-WinR.txt" target="_blank">HERE</a> for the text file.</p>
+<p>C:\Program Files\Autodesk\AutoCAD 2017\PLNT3D\PnPIso.exe</p>
+<p>/config:”C:\Autodesk\Plant Project\Isometric\HOB_ANSI-B\isoconfig.xml”</p>
+<div class="language-lisp highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr>
+<td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td>
+<td class="rouge-code"><pre><span class="p">(</span><span class="nv">command</span><span class="err"> </span><span class="s">"start"</span>
+<span class="s">"C:\\Program Files\\Autodesk\\AutoCAD 2017\\PLNT3D\\PnPIso.exe
+/config:\"C:\\Autodesk\\Plant Project\\Isometric\\HOB_ANSI-B\\isoconfig.xml\"
+"</span><span class="p">)</span>
+</pre></td>
+</tr></tbody></table></code></div></div>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/img/102316_0244_autocadplan2.png" alt=""></p>
+<p>Providing escape characters to wrap the application path does not work either. It doesn’t seem to recognize the string and simply exits the function.</p>
+<div class="language-lisp highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr>
+<td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td>
+<td class="rouge-code"><pre><span class="p">(</span><span class="nv">command</span><span class="err"> </span><span class="s">"start"</span>
+<span class="s">"\"C:\\Program Files\\Autodesk\\AutoCAD 2017\\PLNT3D\\PnPIso.exe\"
+/config:\"C:\\Autodesk\\Plant Project\\Isometric\\HOB_ANSI-B\\isoconfig.xml\"
+"</span><span class="p">)</span>
+</pre></td>
+</tr></tbody></table></code></div></div>
+<p>The inability to run the application with the command function through LISP can be remedied by adding the path to PnPIso.exe to the Windows System Variable “Path” (System&gt;Advanced System Settings&gt;Environment Variables [System Variables [Path]]). By doing this, the path can be removed from the function call leaving only the application name.</p>
+<div class="language-lisp highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr>
+<td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td>
+<td class="rouge-code"><pre><span class="p">(</span><span class="nv">command</span><span class="err"> </span><span class="s">"start"</span>
+<span class="s">" PnPIso.exe /config:\"C:\\Autodesk\\Plant Project\\Isometric\\HOB_ANSI-B\\isoconfig.xml\""</span>
+<span class="p">)</span>
+</pre></td>
+</tr></tbody></table></code></div></div>
+<p>This is a functional solution, but a slightly awkward one. If the user group was large, the need to change the Environment Variables on multiple machines would make this cumbersome. One upside is that it ensures that everyone is pathed identically. This can also be pathed to a server installation, which would allow multiple users to use the application without the need to install Plant 3D on every machine.</p>
+<p>Method #2 - <code class="language-plaintext highlighter-rouge">(startapp "pnpiso.exe /config:&lt;file path&gt;")</code></p>
+<p>This is a much neater method as it doesn’t require Environment Variables to be set. Spaces are not evaluated in this function so providing the full path is perfectly acceptable.</p>
+<div class="language-lisp highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr>
+<td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td>
+<td class="rouge-code"><pre><span class="p">(</span><span class="nv">startapp</span><span class="err"> </span><span class="s">"C:\\Program Files\\Autodesk\\AutoCAD 2017\\PLNT3D\\PnPIso.exe
+/config:C:\\Autodesk\\Project\\Isometric\\HOB_ANSI-B\\isoconfig.xml"</span>
+<span class="p">)</span>
+</pre></td>
+</tr></tbody></table></code></div></div>
+<p>Using this particular method would also allow for dynamically changing the path in the routing. Situations such as a newer version installation, working remotely, or with a local installation, server path changes, etc can all be handled by allowing for dynamic pathing without the need to modify Environment Variables.</p>
+<p>Arguments</p>
+<p>The arguments are fairly straightforward. They are simply strings resembling paths. Oddly enough, these do need to be wrapped in escape characters if the path contains a space.</p>
+<p>/config:&lt;file path&gt; - Full path to the IsoConfig.xml. The xml must be contained in this path.</p>
+<p>Acceptable - /config:"C:\Autodesk\Plant Project\Isometric\HOB_ANSI-B\isoconfig.xml"</p>
+<p>Not Acceptable - /config:C:\Autodesk\Plant Project\Isometric\HOB_ANSI-B\isoconfig.xml</p>
+<p>Not Acceptable - /config:"C:\Autodesk\Plant Project\Isometric\HOB_ANSI-B"</p>
+<p>[INPUT] - Specifies the input file or folder</p>
+<p>This argument will accept a full file path, or a folder path.</p>
+<p>C:\Autodesk\PCF\Test-Iso-01.pcf</p>
+<p>C:\Autodesk\PCF</p>
+<p>"C:\Autodesk\PCF Files"</p>
+<p>A word of warning about this argument. You are able to supply a folder as the argument, but if a folder is provided, ALL PCF files located in the folder will be processed. This can be dangerous if you have a central location where all PCF files are located. Also, make sure that the closing delimiter for the folder path is excluded.</p>
+<p>Acceptable - C:\Autodesk\PCF</p>
+<p>Not Acceptable - C:\Autodesk\PCF\</p>
+<p>[OUTPUT] - Specifies the output folder</p>
+<p>File path for DWG creation. Same criteria as all other paths; escape characters for paths with spaces, and no closing delimiter.</p>
+<p>Here is a complete script for you to play with and modify to your liking. Click <a href="/assets/lsp/HOB_PnPIso.lsp" target="_blank">HERE</a> for lisp</p>
+<div class="language-lisp highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr>
+<td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td>
+<td class="rouge-code"><pre><span class="p">(</span><span class="nv">startapp</span><span class="err"> </span><span class="s">"C:\\Program Files\\Autodesk\\AutoCAD 2017\\PLNT3D\\PnPIso.exe
+/config:C:\\Autodesk\\Project\\Isometric\\HOB_ANSI-B\\isoconfig.xml"</span>
+<span class="nv">C:\\Autodesk\\PCF</span>
+<span class="nv">C:\\Autodesk\\DWG</span>
+<span class="p">)</span>
+</pre></td>
+</tr></tbody></table></code></div></div>
+<p>Don’t forget, these are all strings, so feeding variables is completely acceptable. The getfiled function makes it pretty easy to make this script dynamic.</p>
+<p>This has been an amazing discovery for our current workflows. We currently use Autodesk Fabrication for all of our model content and only use Plant 3D for iso production. Considering that all of the customization of the Plant 3D iso process is done entirely through the xml’s and vanilla AutoCAD, this has allowed us the option of never actually opening Plant 3D again. I will also say that although Plant 3D also initiates the PnPIso.exe for all iso production, and therefore should run at the same speed as running the process independently, I have not found that to be entirely accurate. The only explanation would be that Plant has a built in reactor to watch the process and notify the user when the process has completed, as well as providing dialog information about the production process once complete. The time savings is marginal but “a second saved is a second earned”….or something like that.</p>
+<p>NOTICE: This post is not complete. The intent was to get the information out there as soon as possible for anyone currently searching for it. This post will be updated with .NET and possibly Python implementations as well.</p>
+<p>Stay tuned for more excellence!</p>
+</div>
+<div class="post-tail-wrapper text-muted">
+<div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href="/categories/fabrication-cadmep/">Fabrication CADmep</a>, <a href="/categories/lisp/">Lisp</a>, <a href="/categories/plant3d/">Plant3D</a>
+</div>
+<div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/autocad/" class="post-tag no-text-decoration">AutoCAD</a> <a href="/tags/fabrication/" class="post-tag no-text-decoration">Fabrication</a> <a href="/tags/pcf/" class="post-tag no-text-decoration">PCF</a> <a href="/tags/pnpiso/" class="post-tag no-text-decoration">PnPIso</a> <a href="/tags/pnpiso-exe/" class="post-tag no-text-decoration">PnPIso.exe</a> <a href="/tags/script/" class="post-tag no-text-decoration">script</a> <a href="/tags/uncategorized/" class="post-tag no-text-decoration">Uncategorized</a>
+</div>
+<div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+<div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> by the author.</div>
+<div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i> </span>
+</div>
+</div>
+</div>
+</div></div>
+<div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access">
+<div id="access-lastmod" class="post"> <span>Recent Update</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/accessing-fabricaton-items-through-net/">Accessing Fabricaton Items Through .NET</a></li></ul>
+</div>
+<div id="access-tags"> <span>Trending Tags</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/autocad/">AutoCAD</a> <a class="post-tag" href="/tags/fabrication/">Fabrication</a> <a class="post-tag" href="/tags/vla/">VLA</a> <a class="post-tag" href="/tags/lisp/">Lisp</a> <a class="post-tag" href="/tags/visual-lisp/">Visual Lisp</a> <a class="post-tag" href="/tags/activex/">ActiveX</a> <a class="post-tag" href="/tags/automation/">Automation</a> <a class="post-tag" href="/tags/cadmep/">cadMEP</a> <a class="post-tag" href="/tags/command/">command</a> <a class="post-tag" href="/tags/fabrication-api/">Fabrication API</a>
+</div>
+</div>
+</div></div>
+</div>
+<div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+<div id="related-posts" class="mt-5 mb-2 mb-sm-4">
+<h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3>
+<div class="card-deck mb-4">
+<div class="card"> <a href="/posts/project-honey-badger-1-fabricating-fabrication-pcfs-for-plant-3d/"><div class="card-body"> <span class="timeago small"> Sep 30, 2016 <i class="unloaded">2016-09-30T23:41:00-07:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Project Honey Badger #1 - Fabricating Fabrication PCFs for Plant 3D</h3>
+<div class="text-muted small"><p> I’d like to start by saying that this project has been a smashing success. Despite the seemingly insurmountable list of problems that could and did arise on a project of this magnitude, we have man...</p></div>
+</div></a>
+</div>
+<div class="card"> <a href="/posts/autodesk-university-2016-jhoward/"><div class="card-body"> <span class="timeago small"> Nov 20, 2016 <i class="unloaded">2016-11-20T16:30:00-07:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Autodesk University 2016 - Jhoward</h3>
+<div class="text-muted small"><p> It was another fine AU conference and my head is spinning with new or even evolved ideas. I had a two classes that pretty much tanked, but despite being sore from the 30 miles of walking I did have...</p></div>
+</div></a>
+</div>
+<div class="card"> <a href="/posts/design-line-automation-segment-auditing/"><div class="card-body"> <span class="timeago small"> Sep 25, 2016 <i class="unloaded">2016-09-25T16:19:00-07:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Design Line Automation Segment Auditing</h3>
+<div class="text-muted small"><p> If you have ever been given a Revit model and tried to get a leg up on your job using ProcessRun, then you have known true frustration. It isn’t perfect, but it is a truly epic tool that can direct...</p></div>
+</div></a>
+</div>
+</div>
+</div>
+<div class="post-navigation d-flex justify-content-between"> <a href="/posts/autodesk-fabrication-list-setup-300s-dxf-codes/" class="btn btn-outline-primary" prompt="Older"><p>Autodesk Fabrication List Setup and 300's DXF Codes</p></a> <a href="/posts/autodesk-fabrication-vla-properties-exposed/" class="btn btn-outline-primary" prompt="Newer"><p>Autodesk Fabrication - VLA Properties Exposed</p></a>
+</div>
+</div></div></div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script> <script type="text/javascript"> const imgs = document.querySelectorAll('.post-content img'); const observer = lozad(imgs); observer.observe(); </script><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center">
+<div class="footer-left"><p class="mb-0"> © 2022 <a href="https://www.linkedin.com/in/andrew-hepker-738b0b80/" target="_blank" rel="noopener noreferrer">House of BIM</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div>
+<div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener noreferrer">Chirpy</a> theme.</p></div>
+</div></footer>
+</div>
+<div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content">
+<div id="search-hints">
+<h4 class="text-muted mb-4">Trending Tags</h4>
+<a class="post-tag" href="/tags/autocad/">AutoCAD</a> <a class="post-tag" href="/tags/fabrication/">Fabrication</a> <a class="post-tag" href="/tags/vla/">VLA</a> <a class="post-tag" href="/tags/lisp/">Lisp</a> <a class="post-tag" href="/tags/visual-lisp/">Visual Lisp</a> <a class="post-tag" href="/tags/activex/">ActiveX</a> <a class="post-tag" href="/tags/automation/">Automation</a> <a class="post-tag" href="/tags/cadmep/">cadMEP</a> <a class="post-tag" href="/tags/command/">command</a> <a class="post-tag" href="/tags/fabrication-api/">Fabrication API</a>
+</div>
+<div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div>
+</div></div>
+</div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script>

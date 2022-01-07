@@ -1,0 +1,7 @@
+User-agent: *
+
+Disallow: /norobots/
+
+Sitemap: /sitemap.xml
+
+# hob{th1s_1s_th3_fl4g}

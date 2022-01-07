@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en-US" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="pv-cache-enabled" content="false"><meta name="generator" content="Jekyll v4.2.0" /><meta property="og:title" content="Project Alyobabetous : Lisp Plugin for Plant 3D" /><meta name="author" content="Josh Howard" /><meta property="og:locale" content="en_US" /><meta name="description" content="In a prior post I discussed my need to dig into the Plant 3D API for the purpose of converting P3D content into Autodesk Fabrication content. Well, it was a pretty huge success and works comparably to the Revit export workflow. Check out this Sch10 stainless underground conversion example. Blue is the original P3D content and Red is my CADmep converted content." /><meta property="og:description" content="In a prior post I discussed my need to dig into the Plant 3D API for the purpose of converting P3D content into Autodesk Fabrication content. Well, it was a pretty huge success and works comparably to the Revit export workflow. Check out this Sch10 stainless underground conversion example. Blue is the original P3D content and Red is my CADmep converted content." /><link rel="canonical" href="/posts/project-alyobabetous-lisp-plugin-for-plant-3d/" /><meta property="og:url" content="/posts/project-alyobabetous-lisp-plugin-for-plant-3d/" /><meta property="og:site_name" content="House of BIM" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2017-02-20T12:08:00-07:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Project Alyobabetous : Lisp Plugin for Plant 3D" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"headline":"Project Alyobabetous : Lisp Plugin for Plant 3D","dateModified":"2017-02-20T12:08:00-07:00","datePublished":"2017-02-20T12:08:00-07:00","description":"In a prior post I discussed my need to dig into the Plant 3D API for the purpose of converting P3D content into Autodesk Fabrication content. Well, it was a pretty huge success and works comparably to the Revit export workflow. Check out this Sch10 stainless underground conversion example. Blue is the original P3D content and Red is my CADmep converted content.","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/project-alyobabetous-lisp-plugin-for-plant-3d/"},"url":"/posts/project-alyobabetous-lisp-plugin-for-plant-3d/","@type":"BlogPosting","author":{"@type":"Person","name":"Josh Howard"},"@context":"https://schema.org"}</script><title>Project Alyobabetous : Lisp Plugin for Plant 3D | House of BIM</title><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon.png"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon-precomposed.png"><link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicons/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicons/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/manifest.json"><meta name='msapplication-config' content='/assets/img/favicons/browserconfig.xml'><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-TileImage" content="/assets/img/favicons/ms-icon-144x144.png"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="cdn.jsdelivr.net"><link rel="dns-prefetch" href="cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script defer src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id="></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); }); </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end">
+<div class="profile-wrapper text-center">
+<div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="/assets/img/favicons/favicon-96x96.png" alt="avatar" onerror="this.style.display='none'"> </a>
+</div>
+<div class="site-title mt-3"> <a href="/">House of BIM</a>
+</div>
+<div class="site-subtitle font-italic">Stuff and Things...it's what we do</div>
+</div>
+<ul class="w-100">
+<li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a>
+</li>
+<li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a>
+</li>
+<li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a>
+</li>
+<li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-database ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a>
+</li>
+<li class="nav-item"> <a href="/links/" class="nav-link"> <i class="fa-fw fa fa-link ml-xl-3 mr-xl-3 unloaded"></i> <span>LINKS</span> </a>
+</li>
+<li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fa fa-question ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a>
+</li>
+</ul>
+<div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center"> <a href="https://github.com/AHepker-HOB" aria-label="github" class="order-3" target="_blank" rel="noopener noreferrer"> <i class="fab fa-github"></i> </a> <a href="https://www.linkedin.com/in/andrew-hepker-738b0b80/" aria-label="linkedin" class="order-4" target="_blank" rel="noopener noreferrer"> <i class="fab fa-linkedin"></i> </a> <a href="javascript:location.href=%5B'mailto:',%20'andrew',%20'.',%20'hepker',%20'@house',%20'ofbim.com'%5D.join('')" aria-label="email" class="order-5"> <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" class="order-6"> <i class="fas fa-rss"></i> </a> <span class="icon-border order-2"></span> <span id="mode-toggle-wrapper" class="order-1"> <i class="mode-toggle fas fa-adjust"></i> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } var self = this; /* always follow the system prefers */ this.sysDarkPrefers.addListener(function() { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.updateMermaid(); }); } /* constructor() */ setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode == ModeToggle.DARK_MODE; } get isLightMode() { return this.mode == ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer) ) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } updateMermaid() { if (typeof mermaid !== "undefined") { let expectedTheme = (this.modeStatus === ModeToggle.DARK_MODE? "dark" : "default"); let config = { theme: expectedTheme }; /* re-render the SVG › <https://github.com/mermaid-js/mermaid/issues/311#issuecomment-332557344> */ $(".mermaid").each(function() { let svgCode = $(this).prev().children().html(); $(this).removeAttr("data-processed"); $(this).html(svgCode); }); mermaid.initialize(config); mermaid.init(undefined, ".mermaid"); } } flipMode() { if (this.hasMode) { if (this.isSysDarkPrefer) { if (this.isLightMode) { this.clearMode(); } else { this.setLight(); } } else { if (this.isDarkMode) { this.clearMode(); } else { this.setDark(); } } } else { if (this.isSysDarkPrefer) { this.setLight(); } else { this.setDark(); } } this.updateMermaid(); } /* flipMode() */ } /* ModeToggle */ let toggle = new ModeToggle(); $(".mode-toggle").click(function() { toggle.flipMode(); }); </script> </span>
+</div>
+</div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Posts </a> </span> <span>Project Alyobabetous : Lisp Plugin for Plant 3D</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div>
+<i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel">Cancel</span>
+</div></div><div id="main-wrapper">
+<div id="main">
+<div class="row">
+<div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+<h1 data-toc-skip>Project Alyobabetous : Lisp Plugin for Plant 3D</h1>
+<div class="post-meta text-muted d-flex flex-column">
+<div> <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Mon, Feb 20, 2017, 12:08 PM -0700"> Feb 20, 2017 <i class="unloaded">2017-02-20T12:08:00-07:00</i> </span> by <span class="author"> Josh Howard </span>
+</div>
+<div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="1054 words">5 min</span>
+</div>
+</div>
+<div class="post-content">
+<p>In a prior post I discussed my need to dig into the Plant 3D API for the purpose of converting P3D content into Autodesk Fabrication content. Well, it was a pretty huge success and works comparably to the Revit export workflow. Check out this Sch10 stainless underground conversion example. Blue is the original P3D content and Red is my CADmep converted content.<br> <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/img/022017_1908_projectalyo1.png" alt="" width="473" height="220"></p>
+<p>I appropriately named this project after Zero Wing’s iconic <a href="http://allyourbasearebelongtous.com/" target="_blank" rel="noopener noreferrer">“All your base are belong to us”</a> phrase. Project Alyobabetous is indeed my Plant 3D converter, but that vague context is about all I’m going to share of my converter. I will however spend the rest of this post talking about the Plant 3D .Net plugin I made to extract the necessary information, provide the code to that plugin and some generic examples of how you might be able to leverage it.</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>I provide the following code entirely without any notion of support and it should be considered a starting point for your own projects. Your welcome to ask a question about it, but I don’t feel any obligation to dig any deeper into Plant 3D’s awkward API on your behalf than I already have. Also note that this thing works fine under specific context, but I probably have not error trapped for all types of potential P3D content or every improper way you could use the DLL and an <span style="text-decoration:underline;">AutoCAD Fatal Error is an entirely possible outcome by using it</span>!</p>
+<h2 id="downloads">Downloads</h2>
+<p>Use this link if you want the C# project code that you have to compile:<br> <a href="/assets/dotnet/HOB_P3DLispSupport_Project.zip">HOB_P3DLispSupport_Project.zip</a></p>
+<p>Use this link if you just want the functional DLL to use at your own risk:<br> <a href="/assets/dotnet/HOB_P3DPlugin.zip">HOB_P3DPlugin.zip</a></p>
+<p>Autodesk Plant 3D SDK Link:<br> <a href="https://www.autodesk.com/developer-network/platform-technologies/autocad-p-id-and-plant-3d/" target="_blank" rel="noopener noreferrer">https://www.autodesk.com/developer-network/platform-technologies/autocad-p-id-and-plant-3d/</a></p>
+<p>Now that the legal and distribution aspects are over, we can actually talk about how to use these 2 lisp functions.</p>
+<h1 id="getplantvalues-overview">GetPlantValues Overview</h1>
+<p>This function will give you access to all the “string” properties and port information of a P3D Part. Which, to the best of my knowledge everything inherits from the base class Part and thus should work for all plant objects. I have noticed that Plant 3D connectors are deviants in the quantity of strings available and I wouldn’t be at all surprised if that holds true with other types of content. To combat those inconsistencies I made the output of this function a list of paired value lists. This way I could always know for sure which string property value I was looking at in my code.</p>
+<h3 id="getplantvalues-syntax">GetPlantValues: Syntax</h3>
+<div class="language-lisp highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr>
+<td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td>
+<td class="rouge-code"><pre><span class="p">(</span><span class="nv">GetPlantValues</span> <span class="nv">ename</span> <span class="nv">[string</span> <span class="nv">[string]</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span><span class="nv">]</span><span class="p">)</span>
+</pre></td>
+</tr></tbody></table></code></div></div>
+<h3 id="getplantvalues-arguments">GetPlantValues: Arguments</h3>
+<p><strong>Ename</strong>: An entity name of a plant 3D object you would like to request information from.</p>
+<p><strong>String(s)</strong> These are property names, but you can request ALL of them by requesting “<em>” and this should probably be done at first until you know exactly what you’re looking for. This function doesn’t care if you send it 10 string arguments or a single list containing 10 strings. *Note:</em> that this routine is not designed to enforce a return in the order in which you provided them.</p>
+<h3 id="getplantvalues-return-values">GetPlantValues: Return Values</h3>
+<p>A list containing paired lists of the PropertyName(s) and PropertyValue(s) you requested. The PORTS property is not part of the standard string properties the datalink manager provides and is a custom collection of Location and Vector points for each connector the P3D part contained. <em>Note</em> that the Location XYZ + Vector XYZ will give you a point exactly 1 unit distance away from that connector’s XYZ location in its native planar direction.</p>
+<h3 id="getplantvalues-examples">GetPlantValues: Examples</h3>
+<div class="language-lisp highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr>
+<td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td>
+<td class="rouge-code"><pre><span class="p">(</span><span class="nv">GetPlantValues</span> <span class="nv">ent</span> <span class="s">"PARTSIZELONGDESC"</span> <span class="s">"WEIGHT"</span><span class="p">)</span>
+<span class="p">((</span><span class="s">"PARTSIZELONGDESC"</span> <span class="s">"ELL 90 LR SCH 10S 304/304L SS A403-W 4"</span><span class="p">)</span> <span class="p">(</span><span class="s">"WEIGHT"</span> <span class="s">"8.9"</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">GetPlantValues</span> <span class="nv">ent</span> <span class="p">(</span><span class="nb">list</span> <span class="s">"MATCHINGPIPEOD"</span> <span class="s">"LINENUMBERTAG"</span><span class="p">))</span>
+<span class="p">((</span><span class="s">"MATCHINGPIPEOD"</span> <span class="s">"4.5"</span><span class="p">)</span> <span class="p">(</span><span class="s">"LINENUMBERTAG"</span> <span class="s">"D‍N‍00001"</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">GetPlantValues</span> <span class="nv">ent</span> <span class="p">(</span><span class="nb">list</span> <span class="s">"WEIGHT"</span> <span class="s">"PORTS"</span><span class="p">))</span>
+<span class="p">((</span><span class="s">"WEIGHT"</span> <span class="s">"8.9"</span><span class="p">)</span> <span class="p">(</span><span class="s">"PORTS"</span> <span class="p">(</span><span class="s">"S1"</span> <span class="p">((</span><span class="mf">37987.0</span> <span class="mf">62838.1</span> <span class="mf">6558.0</span><span class="p">)</span> <span class="p">(</span><span class="mf">-0.999946</span> <span class="mf">0.000646985</span> <span class="mf">0.0104161</span><span class="p">)))</span> <span class="p">(</span><span class="s">"S2"</span> <span class="p">((</span><span class="mf">37993.0</span> <span class="mf">62832.1</span> <span class="mf">6557.94</span><span class="p">)</span> <span class="p">(</span><span class="mf">-0.00064702</span> <span class="mf">-1.0</span> <span class="mf">6.75919e-19</span><span class="p">)))))</span>
+</pre></td>
+</tr></tbody></table></code></div></div>
+<h1 id="setplantvalues-overview">SetPlantValues Overview</h1>
+<p>This is my meager attempt at giving fellow lispers the ability to change something. It has been a few years since I’ve tried to actually work with plant 3D on a project, but I vividly remember the act of an Entmod fatal erroring Plant3D at the next save. This function will make an attempt at a single property value change on an entity. I say attempt because I know some of them seem to be read only; like size. I didn’t really need this for what I was doing and thus haven’t tested it extensively, but the C# code is available if you want to roll up your sleeves and make better.</p>
+<h3 id="setplantvalues-syntax">SetPlantValues: Syntax</h3>
+<div class="language-lisp highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr>
+<td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td>
+<td class="rouge-code"><pre><span class="p">(</span><span class="nv">SetPlantValues</span> <span class="nv">ename</span> <span class="nv">PropName</span> <span class="nv">PropValue</span><span class="p">)</span>
+</pre></td>
+</tr></tbody></table></code></div></div>
+<h3 id="setplantvalues-aguments">SetPlantValues: Aguments</h3>
+<ul>
+<li>
+<strong>Ename</strong>: An entity name of a plant 3D object you would like to change information on.</li>
+<li>
+<strong>PropName</strong>: A string representing any of the Property Names provided by the GetPlantValues function using “*” except PORTS.</li>
+<li>
+<strong>PropValue</strong>: A string representing the new value of you want the provided PropName to hold.</li>
+</ul>
+<h3 id="setplantvalues-return-values">SetPlantValues: Return Values</h3>
+<p>It returns (T) if the PropName existed and made an attempt to set your provided value. It returns (nil) if the provided PropName was not found and would mean no attempts to do work were made. Note that a return of (T) does not necessarily mean the value took. You will have to do your own research to see what does and doesn’t have write access. The good news is I haven’t personally seen it crash from trying. So, it should be safe to poke and prod as much as you want.</p>
+<h3 id="setplantvalues-examples">SetPlantValues: Examples</h3>
+<div class="language-lisp highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr>
+<td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td>
+<td class="rouge-code"><pre><span class="p">(</span><span class="nv">GetPlantValues</span> <span class="nv">ent</span> <span class="s">"LINENUMBERTAG"</span><span class="p">)</span>
+<span class="p">((</span><span class="s">"LINENUMBERTAG"</span> <span class="s">"D‍N‍00001"</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">SetPlantValues</span> <span class="nv">ent</span> <span class="s">"LINENUMBERTAG"</span> <span class="s">"E‍N‍10001"</span><span class="p">)</span>
+<span class="p">(</span><span class="no">t</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">GetPlantValues</span> <span class="nv">ent</span> <span class="s">"LINENUMBERTAG"</span><span class="p">)</span>
+<span class="p">((</span><span class="s">"LINENUMBERTAG "</span> <span class="s">"EN‍10001"</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nv">SetPlantValues</span> <span class="nv">ent</span> <span class="s">"HOUSEOFBIM"</span> <span class="s">"E‍N‍10001"</span><span class="p">)</span>
+<span class="p">(</span><span class="no">nil</span><span class="p">)</span>
+</pre></td>
+</tr></tbody></table></code></div></div>
+<h3 id="used-acad-net-references">Used ACAD .Net References</h3>
+<ul>
+<li>accoremgd.dll</li>
+<li>acdbmgd.dll</li>
+<li>acmgd.dll</li>
+</ul>
+<h3 id="used-p3d-net-references">Used P3D .Net References</h3>
+<ul>
+<li>PnP3dObjectsMgd.dll</li>
+<li>PnP3dProjectPartsMgd.dll</li>
+<li>PnPDataLinks.dll</li>
+<li>PnPDataObjects.dll</li>
+<li>PnPProjectManagerMgd.dll</li>
+</ul>
+<h1 id="recap">Recap</h1>
+<p>Well, I certainly hope this enables somebody out there to make Plant 3D do something really cool against its will. Plant is easily the most over managed AutoCAD based piping software I’ve seen and that over management could render this utility good for nothing more than a .Net P3D project example, but at least I tried to help fellow lispers. If anyone does manage to do something cool with it please let me know about it in the comments. I’d really like to know this simple .Net implementation helped a struggling automater in some way.</p>
+</div>
+<div class="post-tail-wrapper text-muted">
+<div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href="/categories/net/">.NET</a>, <a href="/categories/plant3d/">Plant3D</a>, <a href="/categories/lisp/">Lisp</a>
+</div>
+<div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/autocad/" class="post-tag no-text-decoration">AutoCAD</a> <a href="/tags/plant3d-api/" class="post-tag no-text-decoration">Plant3D API</a> <a href="/tags/plant3d-c/" class="post-tag no-text-decoration">Plant3D C#</a> <a href="/tags/plant3d-lisp/" class="post-tag no-text-decoration">Plant3D Lisp</a>
+</div>
+<div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+<div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> by the author.</div>
+<div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i> </span>
+</div>
+</div>
+</div>
+</div></div>
+<div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down">
+<div class="access">
+<div id="access-lastmod" class="post"> <span>Recent Update</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/accessing-fabricaton-items-through-net/">Accessing Fabricaton Items Through .NET</a></li></ul>
+</div>
+<div id="access-tags"> <span>Trending Tags</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/autocad/">AutoCAD</a> <a class="post-tag" href="/tags/fabrication/">Fabrication</a> <a class="post-tag" href="/tags/vla/">VLA</a> <a class="post-tag" href="/tags/lisp/">Lisp</a> <a class="post-tag" href="/tags/visual-lisp/">Visual Lisp</a> <a class="post-tag" href="/tags/activex/">ActiveX</a> <a class="post-tag" href="/tags/automation/">Automation</a> <a class="post-tag" href="/tags/cadmep/">cadMEP</a> <a class="post-tag" href="/tags/command/">command</a> <a class="post-tag" href="/tags/fabrication-api/">Fabrication API</a>
+</div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+<div id="related-posts" class="mt-5 mb-2 mb-sm-4">
+<h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3>
+<div class="card-deck mb-4">
+<div class="card"> <a href="/posts/autocad-plant-3d-pnpiso-exe-scripting/"><div class="card-body"> <span class="timeago small"> Oct 22, 2016 <i class="unloaded">2016-10-22T19:52:00-07:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>AutoCAD Plant 3D PnPIso.exe Scripting</h3>
+<div class="text-muted small"><p> AutoCAD Plant 3D is a fairly robust program with one well-known and useful feature, which is the production of complete isometric drawings directly from model content. Plant 3D utilizes the PCF fil...</p></div>
+</div></a>
+</div>
+<div class="card"> <a href="/posts/hob-lisp-explorer/"><div class="card-body"> <span class="timeago small"> Nov 3, 2019 <i class="unloaded">2019-11-03T10:27:00-07:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>HOB Lisp Explorer</h3>
+<div class="text-muted small"><p> Today I present another long awaited free utility that should help fellow lisper’s better utilize their Lisp libraries. For those of us who have have written many thousands of lines and often find ...</p></div>
+</div></a>
+</div>
+<div class="card"> <a href="/posts/notepad-udl-highlighting-for-cod-dcl-languages/"><div class="card-body"> <span class="timeago small"> Mar 23, 2019 <i class="unloaded">2019-03-23T21:32:00-07:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Notepad++ UDL Highlighting for COD &amp; DCL Languages</h3>
+<div class="text-muted small"><p> Dialog Control Language UDL We had a DLL AutoCAD command that we lost the code to quite some time ago and wanted to “update” its functionality. We could have done this through lisp quite easily, bu...</p></div>
+</div></a>
+</div>
+</div>
+</div>
+<div class="post-navigation d-flex justify-content-between"> <a href="/posts/fabrication-scripting-vla-notes-property/" class="btn btn-outline-primary" prompt="Older"><p>Fabrication Scripting &amp; VLA Notes Property</p></a> <a href="/posts/bim-edm/" class="btn btn-outline-primary" prompt="Newer"><p>BIM EDM</p></a>
+</div>
+</div></div></div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script> <script type="text/javascript"> const imgs = document.querySelectorAll('.post-content img'); const observer = lozad(imgs); observer.observe(); </script><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center">
+<div class="footer-left"><p class="mb-0"> © 2022 <a href="https://www.linkedin.com/in/andrew-hepker-738b0b80/" target="_blank" rel="noopener noreferrer">House of BIM</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div>
+<div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener noreferrer">Chirpy</a> theme.</p></div>
+</div></footer>
+</div>
+<div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content">
+<div id="search-hints">
+<h4 class="text-muted mb-4">Trending Tags</h4>
+<a class="post-tag" href="/tags/autocad/">AutoCAD</a> <a class="post-tag" href="/tags/fabrication/">Fabrication</a> <a class="post-tag" href="/tags/vla/">VLA</a> <a class="post-tag" href="/tags/lisp/">Lisp</a> <a class="post-tag" href="/tags/visual-lisp/">Visual Lisp</a> <a class="post-tag" href="/tags/activex/">ActiveX</a> <a class="post-tag" href="/tags/automation/">Automation</a> <a class="post-tag" href="/tags/cadmep/">cadMEP</a> <a class="post-tag" href="/tags/command/">command</a> <a class="post-tag" href="/tags/fabrication-api/">Fabrication API</a>
+</div>
+<div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div>
+</div></div>
+</div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script>
